@@ -8,7 +8,7 @@ export default function Showreels() {
             <div className="sticky top-0 h-screen flex items-center justify-center">
 
                 <video
-                    src="/showreel.mp4"
+                    src="/video.mp4"
                     autoPlay
                     muted
                     loop
