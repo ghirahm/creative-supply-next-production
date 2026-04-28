@@ -19,6 +19,34 @@ import KOL4 from "../../assets/kol4.png";
 import KOL5 from "../../assets/kol5.png";
 import Element3 from "../../assets/asset-3.svg";
 
+import cse1 from "@/assets/cse1.png";
+import cse2 from "@/assets/cse2.png";
+import cse3 from "@/assets/cse3.png";
+import cse4 from "@/assets/cse7.png";
+import cse5 from "@/assets/cse8.png";
+import cse6 from "@/assets/cse9.png";
+import cse7 from "@/assets/cse10.png";
+import cse8 from "@/assets/cse4.png";
+import cse9 from "@/assets/cse5.png";
+import cse10 from "@/assets/cse6.png";
+
+const logos = [
+    cse1,
+    cse2,
+    cse3,
+    cse4,
+    cse5,
+    cse6,
+    cse7,
+    cse8,
+    cse9,
+    cse10,
+];
+
+
+
+// Import Logo
+
 // Import Motion Libraries
 import {
     motion,
@@ -154,14 +182,27 @@ export default function Hero() {
                                 />
                             </motion.div>
                         </div>
+                        {/* Logos */}
+                        <div className="flex flex-wrap justify-center items-center gap-8">
+                            {logos.map((logo, index) => (
+                                <div key={index} className="opacity-80 hover:opacity-100 transition">
+                                    <Image
+                                        src={logo}
+                                        alt={`ecosystem-${index}`}
+                                        className="h-auto w-24 object-contain brightness-0 invert"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
 
                         {/* BUTTON CTA */}
-                        <motion.div initial="hidden" animate="visible" variants={reveal}>
+                        {/* <motion.div initial="hidden" animate="visible" variants={reveal}>
                             <ButtonThree
                                 text="CLICK TO DISCOVER THE MAGIC"
                                 onClick={scrollToDiscover}
                             />
-                        </motion.div>
+                        </motion.div> */}
                     </motion.div>
                 </motion.div>
 

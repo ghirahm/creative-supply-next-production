@@ -29,11 +29,11 @@ export default function Header() {
     }, [controls]);
 
     const playSound = () => {
-        const audio = new Audio('/hover.mp3');
+        /* const audio = new Audio('/hover.mp3');
         audio.volume = 0;
         audio.play().then(() => {
             audio.volume = 0.2;
-        }).catch(err => console.error("Audio play error:", err));
+        }).catch(err => console.error("Audio play error:", err)); */
     };
 
     return (

@@ -2,6 +2,8 @@
 import { animate, motion, useMotionValue } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+// React & Next
+import Link from "next/link";
 
 import useMeasure from "react-use-measure";
 
@@ -13,6 +15,9 @@ import content5 from "@/assets/content-5.gif";
 import content6 from "@/assets/content-6.gif";
 import content7 from "@/assets/content-7.gif";
 import { ButtonThree } from "../Button";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const images = [content1, content2, content3, content4, content5, content6, content7];
 
@@ -110,6 +115,19 @@ export default function Works() {
 
                 </motion.ul>
             </div>
+            <Link href="/contact">
+                <button className="group relative text-(--color-primary) border border-(--color-primary) px-10 py-6 rounded-3xl hover:border-b-8 hover:border-r-8 transition-all cursor-pointer flex items-center gap-3">
+
+                    <span className="font-extrabold text-3xl md:text-5xl uppercase flex items-center gap-3">
+                        Be Our Partner
+                        <FontAwesomeIcon
+                            icon={faArrowRight}
+                            className="w-[1em] h-[1em] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 -rotate-45"
+                        />
+                    </span>
+
+                </button>
+            </Link>
         </section>
     );
 }

@@ -1,10 +1,10 @@
 // Next Hook
 // Import Image from "next/image";
-import Link from "next/link";
+/* import Link from "next/link"; */
 
 // Import Components
-import Overline from '@/components/Overline';
-import BlurText from '../BlurText';
+/* import Overline from '@/components/Overline';
+import BlurText from '../BlurText'; */
 
 // Import Icon Libraries
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,8 +12,8 @@ import { faDiscord, faDribbble, faFacebook, faGithub, faTwitter } from "@fortawe
 
 export default function Footer() {
     return (
-        <footer className="bg-(--color-primary)">
-            <div className='sticky bg-(--color-primary) h-screen z-10 top-0 flex flex-col items-center p-36 text-white gap-12'>
+        <footer>
+            {/* <div className='sticky bg-(--color-primary) h-screen z-10 top-0 flex flex-col items-center p-36 text-white gap-12'>
                 <Overline text="WE ARE DEEPLY DEDICATED TO" />
 
                 <BlurText
@@ -31,8 +31,8 @@ export default function Footer() {
                         </span>
                     </button>
                 </Link>
-            </div>
-            <div className='bg-white h-screen z-0 sticky top-0'></div>
+            </div> */}
+            {/* <div className='bg-white h-screen z-0 sticky top-0'></div> */}
 
             <div className='bg-(--color-tertiary) h-screen w-full z-30 text-black flex flex-col items-center justify-center relative p-24'>
 
