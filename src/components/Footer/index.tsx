@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-import { site, activeSocials, type SocialKey } from "@/config/site";
+import { site, address, activeSocials, type SocialKey } from "@/config/site";
 
 const SOCIAL_ICONS: Record<SocialKey, IconDefinition> = {
     instagram: faInstagram,
@@ -122,16 +122,24 @@ export default function Footer() {
                                     {site.phoneDisplay}
                                 </a>
                             </li>
-                            <li>{site.address}</li>
                         </ul>
                     </div>
 
-                    {/* COLUMN 4 */}
+                    {/* COLUMN 4 — registered entity and address, stated in full so
+                        it can be verified against the business registration. */}
                     <div className="flex flex-col gap-4">
-                        <h4 className="font-bold">Legal</h4>
-                        <ul className="space-y-4 text-black/70">
-                            <li>{site.legalName}</li>
-                        </ul>
+                        <h4 className="font-bold">Registered office</h4>
+                        <address className="not-italic text-black/70 space-y-1">
+                            <span className="block font-bold text-black uppercase">
+                                {site.legalName}
+                            </span>
+                            {address.lines.map((line) => (
+                                <span key={line} className="block">
+                                    {line}
+                                </span>
+                            ))}
+                            <span className="block">{address.country}</span>
+                        </address>
                     </div>
                 </div>
 
@@ -146,7 +154,7 @@ export default function Footer() {
                 <div className="relative z-10 w-full max-w-6xl flex flex-col md:flex-row justify-between items-center gap-4 mt-20 border-t border-black/10 pt-6">
 
                     <span className="text-sm text-black/60 text-center md:text-left">
-                        © {year} Creative Supply. All rights reserved — {site.address}
+                        © {year} {site.legalName}. All rights reserved — {address.short}
                     </span>
 
                     <div className="flex gap-6 text-sm text-black/60">

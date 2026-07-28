@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 // Site config
-import { site } from "@/config/site";
+import { site, address } from "@/config/site";
 
 // Font
 import { Poppins } from 'next/font/google';
@@ -59,6 +59,27 @@ export const viewport: Viewport = {
     themeColor: "#f1039d",
 };
 
+// Machine-readable business identity. Reviewers and crawlers checking that the
+// site belongs to the registered entity (e.g. Meta / WhatsApp Business API
+// verification) can read the legal name, address and contact details from here
+// rather than inferring them from the page copy.
+const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    legalName: site.legalName,
+    url: site.url,
+    email: site.email,
+    telephone: `+${site.whatsapp}`,
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: address.street,
+        addressLocality: address.locality,
+        addressRegion: address.region,
+        addressCountry: "ID",
+    },
+};
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -67,6 +88,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${poppins.variable} antialiased`}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(organizationSchema),
+                    }}
+                />
                 <Header />
                 {children}
                 <Footer />

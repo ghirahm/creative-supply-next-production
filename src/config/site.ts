@@ -6,13 +6,28 @@ export const site = {
     name: "Creative Supply Indonesia",
     legalName: "PT Kreatif Suplai Indonesia",
     url: "https://creativesupply.id",
-    address: "East Jakarta, Indonesia",
     email: "hello@creativesupply.id",
     // Digits only, international format without "+" — used to build wa.me links.
     whatsapp: "6281112003998",
     phoneDisplay: "+62 811 1200 3998",
-    // Google Maps embed query. Replace with the exact office address.
-    mapQuery: "Creative Supply Indonesia, Jakarta Timur",
+} as const;
+
+// Registered business address. Kept in parts so it can be rendered on its own
+// lines, and as `full` for one-line contexts and structured data. This must
+// match the address on the business registration used for Meta / WhatsApp
+// Business API verification, so edit both forms together.
+export const address = {
+    street: "Bintara Raya No. 23, RT 001 / RW 019",
+    locality: "Jakasampurna, Bekasi Barat",
+    region: "Kota Bekasi, Jawa Barat",
+    country: "Indonesia",
+    lines: [
+        "Bintara Raya No. 23, RT 001 / RW 019",
+        "Jakasampurna, Bekasi Barat",
+        "Kota Bekasi, Jawa Barat",
+    ],
+    full: "Bintara Raya No. 23, RT 001 / RW 019, Jakasampurna, Bekasi Barat, Kota Bekasi, Jawa Barat",
+    short: "Kota Bekasi, Jawa Barat",
 } as const;
 
 export const socials = {

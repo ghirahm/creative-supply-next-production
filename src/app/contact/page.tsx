@@ -17,7 +17,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
-import { site, activeSocials, whatsappLink, type SocialKey } from "@/config/site";
+import { site, address, activeSocials, whatsappLink, type SocialKey } from "@/config/site";
 
 const SOCIAL_ICONS: Record<SocialKey, IconDefinition> = {
     instagram: faInstagram,
@@ -87,11 +87,22 @@ export default function ContactPage() {
                         CONTACT US
                     </h1>
 
+                    {/* Registered business name and address, shown in full for
+                        Meta / WhatsApp Business API verification. */}
                     <div className="space-y-4">
 
-                        <div className="flex items-center gap-3">
-                            <FontAwesomeIcon icon={faLocationDot} />
-                            <p className="text-lg font-medium">{site.address}</p>
+                        <div className="flex items-start gap-3">
+                            <FontAwesomeIcon icon={faLocationDot} className="mt-1.5 shrink-0" />
+                            <address className="not-italic">
+                                <span className="block text-lg font-bold uppercase">
+                                    {site.legalName}
+                                </span>
+                                {address.lines.map((line) => (
+                                    <span key={line} className="block text-lg font-medium">
+                                        {line}
+                                    </span>
+                                ))}
+                            </address>
                         </div>
 
                         <a
@@ -218,21 +229,23 @@ export default function ContactPage() {
 
             </div>
 
-            {/* MAP SECTION */}
+            {/* OFFICE ADDRESS — plain text, no embedded map */}
             <div className="flex flex-col gap-6 mb-24">
                 <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-white">
                     HOW TO FIND US
                 </h2>
 
-                <div className="w-full h-75 md:h-100 rounded-2xl overflow-hidden">
-                    <iframe
-                        title={`Map to ${site.name}`}
-                        src={`https://www.google.com/maps?q=${encodeURIComponent(site.mapQuery)}&output=embed`}
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        className="w-full h-full border-0"
-                    />
-                </div>
+                <address className="not-italic text-white">
+                    <span className="block text-xl md:text-2xl font-bold uppercase mb-3">
+                        {site.legalName}
+                    </span>
+                    {address.lines.map((line) => (
+                        <span key={line} className="block text-lg md:text-xl">
+                            {line}
+                        </span>
+                    ))}
+                    <span className="block text-lg md:text-xl">{address.country}</span>
+                </address>
             </div>
 
         </div>
