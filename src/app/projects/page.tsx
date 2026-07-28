@@ -5,14 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 // sample images
-import img1 from "@/assets/p1.png";
-import img2 from "@/assets/p2.png";
-import img3 from "@/assets/p3.png";
-import img4 from "@/assets/p4.png";
-import img5 from "@/assets/p5.png";
-import img6 from "@/assets/p6.png";
-import img7 from "@/assets/p7.png";
-import img8 from "@/assets/p8.png";
+import img1 from "@/assets/p1.webp";
+import img2 from "@/assets/p2.webp";
+import img3 from "@/assets/p3.webp";
+import img4 from "@/assets/p4.webp";
+import img5 from "@/assets/p5.webp";
+import img6 from "@/assets/p6.webp";
+import img7 from "@/assets/p7.webp";
+import img8 from "@/assets/p8.webp";
 
 const categories = [
     "ALL",
@@ -148,6 +148,9 @@ export default function Projects() {
                                 src={item.image}
                                 alt={item.title}
                                 fill
+                                // Grid is 2 / 4 / 6 columns; without this Next assumes
+                                // 100vw and the browser downloads a full-width variant.
+                                sizes="(min-width: 1024px) 17vw, (min-width: 768px) 25vw, 50vw"
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                             />
 

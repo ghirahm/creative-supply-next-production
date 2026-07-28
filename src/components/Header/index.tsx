@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 // Assets Import
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo.webp';
 
 // Import Component
 import { ButtonOne } from "../Button";

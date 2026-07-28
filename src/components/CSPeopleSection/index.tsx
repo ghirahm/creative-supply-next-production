@@ -5,40 +5,40 @@ import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 // IMPORT IMAGES
-import creator1 from "@/assets/1.png";
-import creator2 from "@/assets/2.png";
-import creator3 from "@/assets/3.png";
-import creator4 from "@/assets/4.png";
-import creator5 from "@/assets/5.png";
-import creator6 from "@/assets/6.png";
-import creator7 from "@/assets/7.png";
-import creator8 from "@/assets/8.png";
-import creator9 from "@/assets/9.png";
-import creator10 from "@/assets/10.png";
-import creator11 from "@/assets/11.png";
-import creator12 from "@/assets/12.png";
-import creator13 from "@/assets/13.png";
-import creator14 from "@/assets/14.png";
-import creator15 from "@/assets/15.png";
-import creator16 from "@/assets/16.png";
-import creator17 from "@/assets/17.png";
-import creator1x from "@/assets/1_1.png";
-import creator2x from "@/assets/2_1.png";
-import creator3x from "@/assets/3_1.png";
-import creator4x from "@/assets/4_1.png";
-import creator5x from "@/assets/5_1.png";
-import creator6x from "@/assets/6_1.png";
-import creator7x from "@/assets/7_1.png";
-import creator8x from "@/assets/8_1.png";
-import creator9x from "@/assets/9_1.png";
-import creator10x from "@/assets/10_1.png";
-import creator11x from "@/assets/11_1.png";
-import creator12x from "@/assets/12_1.png";
-import creator13x from "@/assets/13_1.png";
-import creator14x from "@/assets/14_1.png";
-import creator15x from "@/assets/15_1.png";
-import creator16x from "@/assets/16_1.png";
-import creator17x from "@/assets/17_1.png";
+import creator1 from "@/assets/1.webp";
+import creator2 from "@/assets/2.webp";
+import creator3 from "@/assets/3.webp";
+import creator4 from "@/assets/4.webp";
+import creator5 from "@/assets/5.webp";
+import creator6 from "@/assets/6.webp";
+import creator7 from "@/assets/7.webp";
+import creator8 from "@/assets/8.webp";
+import creator9 from "@/assets/9.webp";
+import creator10 from "@/assets/10.webp";
+import creator11 from "@/assets/11.webp";
+import creator12 from "@/assets/12.webp";
+import creator13 from "@/assets/13.webp";
+import creator14 from "@/assets/14.webp";
+import creator15 from "@/assets/15.webp";
+import creator16 from "@/assets/16.webp";
+import creator17 from "@/assets/17.webp";
+import creator1x from "@/assets/1_1.webp";
+import creator2x from "@/assets/2_1.webp";
+import creator3x from "@/assets/3_1.webp";
+import creator4x from "@/assets/4_1.webp";
+import creator5x from "@/assets/5_1.webp";
+import creator6x from "@/assets/6_1.webp";
+import creator7x from "@/assets/7_1.webp";
+import creator8x from "@/assets/8_1.webp";
+import creator9x from "@/assets/9_1.webp";
+import creator10x from "@/assets/10_1.webp";
+import creator11x from "@/assets/11_1.webp";
+import creator12x from "@/assets/12_1.webp";
+import creator13x from "@/assets/13_1.webp";
+import creator14x from "@/assets/14_1.webp";
+import creator15x from "@/assets/15_1.webp";
+import creator16x from "@/assets/16_1.webp";
+import creator17x from "@/assets/17_1.webp";
 
 const creators = [
     { image: creator1, close: creator1x, name: "Aldo Giustino", instagram: "@aldogiustino", tiktok: "@aldogiustino21", niche: ["VFX", "Editing", "Skits"] },
@@ -134,6 +134,8 @@ export default function CSPeopleSection() {
                                     src={creator.image}
                                     alt=""
                                     fill
+                                    // Card is a fixed min-w-60 (240px) track.
+                                    sizes="240px"
                                     className="object-cover"
                                 />
                             </div>
@@ -187,6 +189,8 @@ export default function CSPeopleSection() {
                                             src={selectedCreator.close}
                                             alt=""
                                             fill
+                                            // Drawer is md:w-175 (700px) with p-16 padding.
+                                            sizes="(min-width: 768px) 572px, calc(100vw - 128px)"
                                             className="object-cover"
                                         />
                                     </div>

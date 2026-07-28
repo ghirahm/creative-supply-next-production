@@ -1,27 +1,28 @@
 "use client";
 import { animate, motion, useMotionValue } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 // React & Next
 import Link from "next/link";
 
 import useMeasure from "react-use-measure";
 
-import content1 from "@/assets/content-1.gif";
-import content2 from "@/assets/content-2.gif";
-import content3 from "@/assets/content-3.gif";
-import content4 from "@/assets/content-4.gif";
-import content5 from "@/assets/content-5.gif";
-import content6 from "@/assets/content-6.gif";
-import content7 from "@/assets/content-7.gif";
 import { ButtonThree } from "../Button";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-const images = [content1, content2, content3, content4, content5, content6, content7];
+// These were 25-32 MB animated GIFs (144 MB total) rendered through next/image
+// with `unoptimized`, so every visitor downloaded all of them uncompressed.
+// They are 9-second vertical clips, so h264 is the right container: the same
+// footage is now 7.3 MB total. Served from /public so they bypass the bundler.
+const CLIPS = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
+    src: `/works/content-${n}.mp4`,
+    poster: `/works/content-${n}.webp`,
+}));
 
-const duplicatedPartners = [...images, ...images, ...images];
+// Tripled so the marquee can loop seamlessly. The browser fetches each unique
+// URL once, so this costs bandwidth for 7 clips, not 21.
+const duplicatedPartners = [...CLIPS, ...CLIPS, ...CLIPS];
 
 export default function Works() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -85,7 +86,7 @@ export default function Works() {
                         setDuration(FAST_DURATION)
                     }}
                 >
-                    {duplicatedPartners.map((src, index) => (
+                    {duplicatedPartners.map((clip, index) => (
                         <li key={index} className="shrink-0">
                             <motion.div
                                 className="h-105 w-fit relative rounded-xl overflow-hidden"
@@ -103,11 +104,16 @@ export default function Works() {
                                         </div>
                                     </div>
                                 )}
-                                <Image
-                                    src={src}
-                                    alt={`Showcase ${index + 1}`}
+                                <video
+                                    src={clip.src}
+                                    poster={clip.poster}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    preload="metadata"
+                                    aria-label={`Showcase ${index + 1}`}
                                     className="h-full w-auto"
-                                    unoptimized={true}
                                 />
                             </motion.div>
                         </li>

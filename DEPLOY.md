@@ -57,9 +57,13 @@ cd app
 
 ```bash
 npm ci
-npm install sharp     # WAJIB: next/image butuh sharp saat produksi
 npm run build
 ```
+
+> `next/image` butuh `sharp` untuk optimasi gambar di produksi, tapi Next 15.2.1
+> sudah mencantumkannya sebagai `optionalDependency`, jadi `npm ci` biasa sudah
+> memasangnya. Kamu hanya perlu `npm install sharp` manual kalau menjalankan
+> `npm ci --omit=optional`.
 
 Kalau build gagal karena OOM (VPS RAM kecil), tambah swap sementara:
 

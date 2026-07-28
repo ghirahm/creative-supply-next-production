@@ -13,23 +13,23 @@ import { ButtonOne, ButtonTwo, ButtonThree } from "../Button";
 import BlurText from "../BlurText";
 
 // Import Assets
-import KOL from "../../assets/kol.png";
-import KOL2 from "../../assets/kol2.png";
-import KOL3 from "../../assets/kol3.png";
-import KOL4 from "../../assets/kol4.png";
-import KOL5 from "../../assets/kol5.png";
+import KOL from "../../assets/kol.webp";
+import KOL2 from "../../assets/kol2.webp";
+import KOL3 from "../../assets/kol3.webp";
+import KOL4 from "../../assets/kol4.webp";
+import KOL5 from "../../assets/kol5.webp";
 import Element3 from "../../assets/asset-3.svg";
 
-import cse1 from "@/assets/cse1.png";
-import cse2 from "@/assets/cse2.png";
-import cse3 from "@/assets/cse3.png";
-import cse4 from "@/assets/cse7.png";
-import cse5 from "@/assets/cse8.png";
-import cse6 from "@/assets/cse9.png";
-import cse7 from "@/assets/cse10.png";
-import cse8 from "@/assets/cse4.png";
-import cse9 from "@/assets/cse5.png";
-import cse10 from "@/assets/cse6.png";
+import cse1 from "@/assets/cse1.webp";
+import cse2 from "@/assets/cse2.webp";
+import cse3 from "@/assets/cse3.webp";
+import cse4 from "@/assets/cse7.webp";
+import cse5 from "@/assets/cse8.webp";
+import cse6 from "@/assets/cse9.webp";
+import cse7 from "@/assets/cse10.webp";
+import cse8 from "@/assets/cse4.webp";
+import cse9 from "@/assets/cse5.webp";
+import cse10 from "@/assets/cse6.webp";
 
 const logos = [
     cse1,
@@ -231,6 +231,8 @@ export default function Hero() {
                                     src={images[index]}
                                     alt="Welcome KOL"
                                     fill
+                                    // Three-column layout, so each tile is about a third.
+                                    sizes="33vw"
                                     className="transition-transform duration-300 hover:translate-y-12 object-contain object-bottom z-30"
                                 />
                             </motion.div>
