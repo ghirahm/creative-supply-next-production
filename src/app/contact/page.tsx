@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -211,7 +212,16 @@ export default function ContactPage() {
                                     checked={consent}
                                     onChange={(e) => setConsent(e.target.checked)}
                                 />
-                                By submitting, you agree to our Privacy Policy.
+                                <span>
+                                    By submitting, you agree to our{" "}
+                                    <Link
+                                        href="/privacy"
+                                        className="text-(--color-primary) underline hover:no-underline"
+                                    >
+                                        Privacy Policy
+                                    </Link>
+                                    .
+                                </span>
                             </label>
                             {errors.consent && (
                                 <span className="text-xs text-red-600">{errors.consent}</span>

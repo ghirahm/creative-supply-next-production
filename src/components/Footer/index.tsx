@@ -25,6 +25,7 @@ const COMPANY_LINKS = [
     { label: "Projects", href: "/projects" },
     { label: "Careers", href: "/career" },
     { label: "Contact", href: "/contact" },
+    { label: "Privacy Policy", href: "/privacy" },
 ];
 
 const SERVICE_LINKS = [
@@ -158,6 +159,7 @@ export default function Footer() {
                     </span>
 
                     <div className="flex gap-6 text-sm text-black/60">
+                        <Link href="/privacy" className="hover:text-black">Privacy Policy</Link>
                         <Link href="/contact" className="hover:text-black">Contact</Link>
                     </div>
 
