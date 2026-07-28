@@ -7,6 +7,8 @@ import {
     faVideo,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { site } from "@/config/site";
+
 const jobs = [
     {
         icon: faCode,
@@ -42,15 +44,15 @@ const jobs = [
 
 export default function CareerSection() {
     return (
-        <div className="w-full py-24 px-6 bg-(--color-primary)">
+        <div className="w-full pt-36 pb-24 px-6 bg-(--color-primary)">
 
             {/* TOP */}
             <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
 
                 {/* LEFT */}
-                <h2 className="text-9xl font-extrabold text-white">
+                <h1 className="text-6xl md:text-8xl xl:text-9xl font-extrabold text-white">
                     JOIN US
-                </h2>
+                </h1>
 
                 {/* RIGHT */}
                 <div className="text-white space-y-6 text-sm md:text-base leading-relaxed">
@@ -94,10 +96,15 @@ export default function CareerSection() {
                             ))}
                         </ul>
 
-                        {/* BUTTON */}
-                        <button className="mt-4 w-full border border-(--color-primary) text-(--color-primary) text-sm font-medium py-2 rounded-lg hover:bg-(--color-primary) hover:text-white transition">
-                            Contact Us
-                        </button>
+                        {/* BUTTON — opens an email draft prefilled with the role */}
+                        <a
+                            href={`mailto:${site.email}?subject=${encodeURIComponent(
+                                `Application: ${job.title}`
+                            )}`}
+                            className="mt-4 w-full border border-(--color-primary) text-(--color-primary) text-sm font-medium py-2 rounded-lg hover:bg-(--color-primary) hover:text-white transition text-center"
+                        >
+                            Apply Now
+                        </a>
                     </div>
                 ))}
 

@@ -5,6 +5,7 @@ import { useState } from "react";
 
 // Next
 import Image from "next/image";
+import Link from "next/link";
 
 // Import Components
 import Overline from "../Overline";
@@ -154,7 +155,10 @@ export default function Hero() {
                             />
 
                             {/* Decorative Elements */}
+                            {/* Hidden below xl: the fixed offsets push these off-canvas
+                                and over the headline on smaller screens. */}
                             <motion.div
+                                className="hidden xl:block"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
@@ -163,12 +167,14 @@ export default function Hero() {
                                     width={48}
                                     height={48}
                                     src={Element3}
-                                    alt="Element"
+                                    alt=""
+                                    aria-hidden="true"
                                     className="absolute top-12 right-80"
                                 />
                             </motion.div>
 
                             <motion.div
+                                className="hidden xl:block"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
@@ -177,7 +183,8 @@ export default function Hero() {
                                     width={48}
                                     height={48}
                                     src={Element3}
-                                    alt="Element"
+                                    alt=""
+                                    aria-hidden="true"
                                     className="absolute bottom-16 left-64"
                                 />
                             </motion.div>
@@ -246,8 +253,12 @@ export default function Hero() {
                     }}
                     viewport={{ once: true, amount: 1 }}
                 >
-                    <ButtonOne text="Be Our Partner" onClick={() => (window.location.href = "/contact")} />
-                    <ButtonTwo text="More Projects" onClick={() => (window.location.href = "/projects")} />
+                    <Link href="/contact">
+                        <ButtonOne text="Be Our Partner" />
+                    </Link>
+                    <Link href="/projects">
+                        <ButtonTwo text="More Projects" />
+                    </Link>
                 </motion.div>
             </motion.div>
         </section>
