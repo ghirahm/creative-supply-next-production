@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+import { whatsappLink } from "@/config/site";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faTv,
@@ -53,12 +55,10 @@ const works = [
 ];
 
 export default function CSWorksSection() {
-    const generateWhatsAppLink = (workTitle: string) => {
-        const phone = "6281112003998";
-        const message = `Halo, saya tertarik bekerja sama dengan CS Works. Boleh minta informasi lebih lanjut tentang ${workTitle}?`;
-
-        return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    };
+    const generateWhatsAppLink = (workTitle: string) =>
+        whatsappLink(
+            `Halo, saya tertarik bekerja sama dengan CS Works. Boleh minta informasi lebih lanjut tentang ${workTitle}?`
+        );
     return (
         <div className="w-full">
 

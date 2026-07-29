@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
+import { whatsappLink } from "@/config/site";
+
 // IMPORT IMAGES
 import creator1 from "@/assets/1.webp";
 import creator2 from "@/assets/2.webp";
@@ -68,12 +70,10 @@ export default function CSPeopleSection() {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [dragWidth, setDragWidth] = useState(0);
 
-    const generateWhatsAppLink = (name: string) => {
-        const phone = "6281112003998";
-        const message = `Halo, saya tertarik bekerja sama dengan talent ${name} dari CS People. Boleh minta informasi lebih lanjut?`;
-
-        return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    };
+    const generateWhatsAppLink = (name: string) =>
+        whatsappLink(
+            `Halo, saya tertarik bekerja sama dengan talent ${name} dari CS People. Boleh minta informasi lebih lanjut?`
+        );
 
     useEffect(() => {
         if (carouselRef.current && containerRef.current) {

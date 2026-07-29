@@ -8,8 +8,9 @@ export const site = {
     url: "https://creativesupply.id",
     email: "hello@creativesupply.id",
     // Digits only, international format without "+" — used to build wa.me links.
-    whatsapp: "6281112003998",
-    phoneDisplay: "+62 811 1200 3998",
+    // Keep these two in sync: same number, one machine-readable, one for display.
+    whatsapp: "6281221492372",
+    phoneDisplay: "+62 812-2149-2372",
 } as const;
 
 // Registered business address. Kept in parts so it can be rendered on its own
