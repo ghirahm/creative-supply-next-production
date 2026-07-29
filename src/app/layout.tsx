@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     keywords: "Creative Agency, Indonesia, Digital Marketing, Content Creator, Branding, Talent Management, Production House",
     creator: site.legalName,
     robots: "index, follow",
+    other: {
+        "facebook-domain-verification": "5d8j78jo71faoah0qgy7pyn7prmm1k",
+    },
     alternates: {
         canonical: "/",
     },
