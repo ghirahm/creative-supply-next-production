@@ -18,16 +18,17 @@ export const site = {
 // match the address on the business registration used for Meta / WhatsApp
 // Business API verification, so edit both forms together.
 export const address = {
-    street: "Bintara Raya No. 23, RT 001 / RW 019",
-    locality: "Jakasampurna, Bekasi Barat",
+    street: "JL Bintara Raya No 23, RT 1 RW 19",
+    locality: "Kelurahan Jakasampurna, Kec. Bekasi Barat",
     region: "Kota Bekasi, Jawa Barat",
+    postalCode: "17145",
     country: "Indonesia",
     lines: [
-        "Bintara Raya No. 23, RT 001 / RW 019",
-        "Jakasampurna, Bekasi Barat",
-        "Kota Bekasi, Jawa Barat",
+        "JL Bintara Raya No 23, RT 1 RW 19",
+        "Kelurahan Jakasampurna, Kec. Bekasi Barat",
+        "Kota Bekasi, Jawa Barat 17145",
     ],
-    full: "Bintara Raya No. 23, RT 001 / RW 019, Jakasampurna, Bekasi Barat, Kota Bekasi, Jawa Barat",
+    full: "JL Bintara Raya No 23, RT 1 RW 19, Kelurahan Jakasampurna, Kec. Bekasi Barat, Kota Bekasi, Jawa Barat 17145",
     short: "Kota Bekasi, Jawa Barat",
 } as const;
 
