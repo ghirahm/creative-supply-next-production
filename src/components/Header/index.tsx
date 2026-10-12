@@ -20,6 +20,7 @@ import { useAnimation, motion, AnimatePresence } from "framer-motion";
 const NAV_LINKS = [
     { label: "Service", href: "/service" },
     { label: "Projects", href: "/projects" },
+    { label: "ODB", href: "/odb" },
     { label: "Career", href: "/career" },
 ] as const;
 
@@ -86,7 +87,7 @@ export default function Header() {
                         </Link>
                     </li>
 
-                    {NAV_LINKS.slice(0, 2).map((item) => (
+                    {NAV_LINKS.slice(0, 3).map((item) => (
                         <li key={item.href} className="hidden md:block">
                             <Link
                                 className="cursor-pointer overflow-hidden h-6 block"
